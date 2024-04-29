@@ -1,5 +1,5 @@
 <head>
-    <?php require_once('layout.php') ?> 
+    <?php require_once('layout.php'); ?> 
     <style>
         .dash-nav i{
             color: #fff;

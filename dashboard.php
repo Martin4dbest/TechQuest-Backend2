@@ -1,4 +1,3 @@
-
 <?php
     // Start the session
     session_start();
@@ -27,9 +26,6 @@
     // Fetch the user data
     $fetch = mysqli_fetch_array($result);
 ?>
-
-
-//work
 
 
 

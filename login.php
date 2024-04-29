@@ -35,7 +35,10 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password">
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" name="password">
+                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword()" style="background-color: green;">Show</button>
+                </div>
             </div>
             <!-- <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -49,5 +52,16 @@
             <p>Don't have an account? <a href="registration.php">register</a></p>
         </div>
     </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>

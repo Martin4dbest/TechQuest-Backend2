@@ -1,24 +1,33 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar Example</title>
+    <link href="path_to_bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" title="Take me to website">
+            <!--<img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
+            <img src="images/bootstrap-logo.svg" alt="Bootstrap Logo" width="30" height="24" class="d-inline-block align-text-top">
+        </a>
+        <div class="nav justify-content-end">
+            <?php
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            if (isset($_SESSION['id']) && $_SESSION['id'] > 0) {
+                echo "<a href='dashboard.php' class='btn btn-danger'>Dashboard</a>";
+            } else {
+                echo "<a href='login.php' class='btn btn-dark mx-2'>Login</a>";
+                echo "<a href='registration.php' class='btn btn-danger mx-2'>Register</a>";
+            }
+            ?>
+        </div>
     </div>
-  </div>
 </nav>
+<script src="path_to_bootstrap.js"></script>
+</body>
+</html>
+
